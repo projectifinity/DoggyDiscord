@@ -19,3 +19,5 @@ shawarma, kebab
 tacos
 bibimbap
 kimbap
+honey walnut shrimp
+chow mein, lo mein
