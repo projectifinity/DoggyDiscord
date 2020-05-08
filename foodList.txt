@@ -1,5 +1,6 @@
 nandos
 kfc
+hainan chicken
 pad thai
 pad see ew
 tom yum
@@ -9,8 +10,9 @@ pho
 somali
 ice cream
 subway
-cajun noodles
-corn on the cob
+ramen
+cajun crayfish noodles
+cajun corn on the cob
 carbonara
 chicken nuggets
 bread (roti, pita, garlic bread)
@@ -21,3 +23,4 @@ bibimbap
 kimbap
 honey walnut shrimp
 chow mein, lo mein
+buffalo wings, chicken wings
