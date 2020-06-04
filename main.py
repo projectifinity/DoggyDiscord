@@ -11,13 +11,13 @@ class MyClient(discord.Client):
         if message.author == self.user:
             return
 
-    if message.content == 'ping':
-        await message.channel.send('pong')
+        if message.content == 'ping':
+            await message.channel.send('pong')
 
-    #generates a "random" food item from list file
-    if message.content == 'w food':
-        from foodPick import random_line
-        await message.channel.send(random_line('foodList.txt'))
+        #generates a "random" food item from list file
+        if message.content == 'w food':
+            from foodPick import random_line
+            await message.channel.send(random_line('foodList.txt'))
 
 client = MyClient()
 keep_alive()
