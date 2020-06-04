@@ -15,7 +15,7 @@ class MyClient(discord.Client):
             await message.channel.send('pong')
 
         #generates a "random" food item from list file
-        if message.content == 'w food':
+        if message.content.lower() == 'w food':
             from foodPick import random_line
             await message.channel.send(random_line('foodList.txt'))
 
