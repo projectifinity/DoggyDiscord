@@ -22,8 +22,8 @@ class MyClient(discord.Client):
             from foodPick import random_line
             await message.channel.send(random_line('foodList.txt'))
             
-        # .keyword is a temporary solution    
-        if message.content.lower().keyword('dramad'):
+        # temporary solution    
+        if 'dramad' in message.content.lower():
             from mydramalistSearch import drama_search
             await message.channel.send(drama_search())
             
