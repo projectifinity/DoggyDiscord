@@ -21,6 +21,12 @@ class MyClient(discord.Client):
         if message.content.lower() == 'w food':
             from foodPick import random_line
             await message.channel.send(random_line('foodList.txt'))
+            
+        if message.content.startswith('w d ')
+            from mydramalistSearch import drama_search
+            await message.channel.send(drama_search())
+            
+        
 
 
 client = MyClient()
