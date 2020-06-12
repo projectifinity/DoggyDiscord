@@ -30,7 +30,9 @@ class MyClient(discord.Client):
         #    from mydramalistSearch import drama_search
         #    await message.channel.send(drama_search())
   
-        if message.content.lower().startswith('w d'):
+  
+        # this thing doesn't work, no idea why
+        if message.content.startswith('pring'):
             await message.channel.send('pong')
 
 
