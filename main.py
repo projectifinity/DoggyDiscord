@@ -2,10 +2,13 @@ import discord
 import os #no idea what this is, but it works
 from keepAlive import keep_alive
 
+# commandPrefix = "w "
 
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as', self.user)
+
+
 
     async def on_message(self, message):
     
@@ -23,11 +26,12 @@ class MyClient(discord.Client):
             await message.channel.send(random_line('foodList.txt'))
             
         # temporary solution    
-        if 'dramad' in message.content.lower():
-            from mydramalistSearch import drama_search
-            await message.channel.send(drama_search())
-            
-        
+        #if 'dramad' in message.content.lower():
+        #    from mydramalistSearch import drama_search
+        #    await message.channel.send(drama_search())
+  
+        if message.content.lower().startswith('w d'):
+            await message.channel.send('pong')
 
 
 client = MyClient()
@@ -35,3 +39,5 @@ client = MyClient()
 client.run(os.getenv("dtoken"))
 # no idea why "client.run('dtoken')" doesn't work but above line works
 
+# example code
+# bot.command_prefix = nprefix
