@@ -1,6 +1,6 @@
 import discord
 import os #no idea what this is, but it works
-from keepAlive import keep_alive
+#from keepAlive import keep_alive
 
 # commandPrefix = "w "
 
