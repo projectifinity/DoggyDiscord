@@ -34,7 +34,6 @@ class MyClient(discord.Client):
         # this thing doesn't work, no idea why
         if message.content.startswith('pring'):
             await message.channel.send('pong')
-            print 'okay'
             print ("oknn")
 
 
