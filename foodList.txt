@@ -8,7 +8,7 @@ sushi
 pizza
 pho
 somali
-ice cream
+ice cream, boba, milk tea, bubble tea
 subway
 ramen
 cajun crayfish noodles
@@ -26,3 +26,4 @@ chow mein, lo mein
 buffalo wings, chicken wings
 curry, thai coconut curry (green/red/yellow), japanese curry
 fried rice, pad kra pow
+bbq, grilled meat, smoked meat
