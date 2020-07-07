@@ -28,7 +28,7 @@ class MyClient(discord.Client):
             
         if message.content.lower() == 'w snack':
             from foodPick import random_line
-            await message.channel.send(random_line('snacklist.txt'))
+            await message.channel.send(random_line('snackList.txt'))
             
         # temporary solution    
         #if 'dramad' in message.content.lower():
