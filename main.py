@@ -3,7 +3,7 @@ import os #no idea what this is, but it works
 #from keepAlive import keep_alive
 
 # commandPrefix = "w "
-client = commands.Bot(command_prefix = 'w ', case_insentive=True)
+# client = commands.Bot(command_prefix = 'w ', case_insentive=True)
 
 class MyClient(discord.Client):
     async def on_ready(self):
