@@ -3,6 +3,7 @@ import os #no idea what this is, but it works
 #from keepAlive import keep_alive
 
 # commandPrefix = "w "
+client = commands.Bot(command_prefix = 'w ', case_insentive=True)
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -24,6 +25,10 @@ class MyClient(discord.Client):
         if message.content.lower() == 'w food':
             from foodPick import random_line
             await message.channel.send(random_line('foodList.txt'))
+            
+        if message.content.lower() == 'w snack':
+            from foodPick import random_line
+            await message.channel.send(random_line('snacklist.txt'))
             
         # temporary solution    
         #if 'dramad' in message.content.lower():
