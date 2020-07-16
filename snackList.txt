@@ -13,7 +13,7 @@ cereal
 granola bar
 fruit
 raisins
-marshmellow
+marshmellow, s'more
 doughnuts, doughnut holes, timbits
 pretzels
 brownies
@@ -22,3 +22,5 @@ sugarcane juice
 chocolate covered nuts (almonds, peanuts, etc)
 wafers
 ferrero rocher
+ice cream
+stop eating you fatty
