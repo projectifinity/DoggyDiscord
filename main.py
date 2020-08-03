@@ -30,6 +30,10 @@ class MyClient(discord.Client):
             from foodPick import random_line
             await message.channel.send(random_line('snackList.txt'))
             
+        if message.content.lower() == 'w aicifood':
+            from foodPick import random_line
+            await message.channel.send(random_line('aicifood.txt'))
+            
         # temporary solution    
         #if 'dramad' in message.content.lower():
         #    from mydramalistSearch import drama_search
