@@ -7,17 +7,21 @@ from randomPick import random_line
 
 client = commands.Bot(command_prefix = 'w ')
 
-#@client.event
-#async def on_message(self, message):
-#  ctx = await self.get_context(message)
-#  if ctx.prefix is not None:
-#    ctx.command = self.commands.get(ctx.invoked_with.lower())
-#    await self.invoke(ctx)
+
 
 @client.event
 async def on_ready():
     print('Logged in as', client.user.name)
     print('------')
+
+@client.event
+async def on_message(self, message):
+    ctx = await self.get_context(message)
+    if ctx.prefix is not None:
+        ctx.command = self.commands.get(ctx.invoked_with.lower())
+        await self.invoke(ctx)
+        
+
         
 @client.command()
 async def pring(ctx):
