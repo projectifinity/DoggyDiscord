@@ -8,7 +8,7 @@ from discord.ext import commands
 from randomPick import random_line
 
 # CMD_PREFIX = "w "
-client = commands.Bot(command_prefix = 'w ', case_insentive=True)
+client = commands.Bot(command_prefix = 'w ')
 
 class MyClient(discord.Client):
     async def on_ready(self):
