@@ -8,24 +8,15 @@ from randomPick import random_line
 client = commands.Bot(command_prefix = 'w ')
 
 
-
 @client.event
 async def on_ready():
     print('Logged in as', client.user.name)
-    print('------')
-
-
-async def on_message(self, message):
-    ctx = await self.get_context(message)
-    if ctx.prefix is not None:
-        ctx.command = self.commands.get(ctx.invoked_with.lower())
-        await self.invoke(ctx)
-        
+    print('------')    
 
         
 @client.command()
-async def pring(ctx):
-    await ctx.send(f'Prong! {round (client.latency * 1000)}ms ')
+async def ping(ctx):
+    await ctx.send(f'Pong! {round (client.latency * 1000)}ms ')
 
 
 @client.command(help='Randomly picks from a food list')
@@ -39,6 +30,10 @@ async def snack(ctx):
 @client.command(help='Picks something from Aici\'s food list')
 async def aicifood(ctx):      
     await ctx.send(random_line('aicifood.txt'))
+    
+@client.command()
+async def haram(ctx):
+    await ctx.send(random_line('haram.txt'))
             
 #If there is an error, it will answer with an error
 @client.event
