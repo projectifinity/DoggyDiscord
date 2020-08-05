@@ -10,21 +10,12 @@ from randomPick import random_line
 # CMD_PREFIX = "w "
 client = commands.Bot(command_prefix = 'w ')
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        print('Logged on as', self.user)
-
-
-    async def on_message(self, message):
-    
-        # we do not want the bot to reply to itself
-        if message.author == self.user:
-            return
-
-        if message.content == 'ping':
-            await message.channel.send('pong')
-
-        await bot.process_commands(message)
+@client.event
+async def on_ready():
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
         
 @client.command(name='pring')
 async def pring(ctx):
