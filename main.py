@@ -49,7 +49,7 @@ async def on_command_error(ctx, error):
 
 #client.run(os.getenv("DTOKEN"))
 # no idea why "client.run('DTOKEN')" doesn't work but above line works
-client.run(DTOKEN)
+client.run('DTOKEN')
 
 # temporary solution    
 #if 'dramad' in message.content.lower():
