@@ -33,7 +33,7 @@ async def aicifood(ctx):
     
 @client.command()
 async def haram(ctx):
-    await ctx.send(random_line('haram.txt'))
+    await ctx.send(random_line('pork.txt'))
             
 #If there is an error, it will answer with an error
 @client.event
