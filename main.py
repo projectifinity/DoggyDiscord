@@ -32,7 +32,7 @@ async def aicifood(ctx):
     await ctx.send(random_line('aicifood.txt'))
     
 @client.command()
-async def haram(ctx):
+async def pytha(ctx):
     await ctx.send(random_line('pork.txt'))
             
 #If there is an error, it will answer with an error
