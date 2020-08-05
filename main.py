@@ -1,27 +1,29 @@
 # version 0.2
-# trying to align code with recommended form in documentation
-# capitalizing variables (ongoing) as it seems to be a python convention?
 
 import discord
 import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
 
-client = commands.Bot(command_prefix = 'w ', case_insensitive=True)
+client = commands.Bot(command_prefix = 'w ')
+
+async def on_message(self, message):
+  ctx = await self.get_context(message)
+  if ctx.prefix is not None:
+    ctx.command = self.commands.get(ctx.invoked_with.lower())
+    await self.invoke(ctx)
 
 @client.event
 async def on_ready():
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
+    print('Logged in as' client.user.name)
     print('------')
         
-@client.command(name='pring')
+@client.command()
 async def pring(ctx):
     await ctx.send(f'Prong! {round (client.latency * 1000)}ms ')
 
 
-@client.command(name='food', help='Randomly picks from a food list')
+@client.command(help='Randomly picks from a food list')
 async def food(ctx):
     await ctx.send(random_line('foodList.txt'))
  
@@ -29,7 +31,7 @@ async def food(ctx):
 async def snack(ctx):
     await ctx.send(random_line('snackList.txt'))
          
-@client.command(name='aicifood', help='Picks something from Aici\'s food list')
+@client.command(help='Picks something from Aici\'s food list')
 async def aicifood(ctx):      
     await ctx.send(random_line('aicifood.txt'))
             
