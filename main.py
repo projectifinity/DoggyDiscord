@@ -14,7 +14,7 @@ async def on_ready():
     print('Logged in as', client.user.name)
     print('------')
 
-@client.event
+
 async def on_message(self, message):
     ctx = await self.get_context(message)
     if ctx.prefix is not None:
