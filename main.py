@@ -24,9 +24,9 @@ class MyClient(discord.Client):
         if message.content == 'ping':
             await message.channel.send('pong')
 
-@client.command()
-async def ping(ctx):
-    await ctx.send(f'Pong! {round (client.latency * 1000)}ms ')
+@client.command(name='pring')
+async def pring(ctx):
+    await ctx.send(f'Prong! {round (client.latency * 1000)}ms ')
 
 
 @client.command()
