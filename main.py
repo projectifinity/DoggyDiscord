@@ -12,7 +12,7 @@ client = commands.Bot(command_prefix = 'w ')
 #  ctx = await self.get_context(message)
 #  if ctx.prefix is not None:
 #    ctx.command = self.commands.get(ctx.invoked_with.lower())
-$    await self.invoke(ctx)
+#    await self.invoke(ctx)
 
 @client.event
 async def on_ready():
