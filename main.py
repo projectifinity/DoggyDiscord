@@ -25,6 +25,11 @@ class MyClient(discord.Client):
             await message.channel.send('pong')
 
 @client.command()
+async def ping(ctx):
+    await ctx.send(f'Pong! {round (client.latency * 1000)}ms ')
+
+
+@client.command()
 async def food(ctx):
     await ctx.send(random_line('foodList.txt'))
     #generates a "random" food item from list file
