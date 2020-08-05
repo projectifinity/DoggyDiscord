@@ -15,7 +15,7 @@ async def on_message(self, message):
 
 @client.event
 async def on_ready():
-    print('Logged in as' client.user.name)
+    print('Logged in as', client.user.name)
     print('------')
         
 @client.command()
