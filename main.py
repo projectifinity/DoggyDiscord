@@ -7,7 +7,7 @@ import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
 
-client = commands.Bot(command_prefix = 'w ')
+client = commands.Bot(command_prefix = 'w ', case_insensitive=True)
 
 @client.event
 async def on_ready():
@@ -25,7 +25,7 @@ async def pring(ctx):
 async def food(ctx):
     await ctx.send(random_line('foodList.txt'))
  
-@client.command(name='snack', help='Randomly picks a snack item to eat')
+@client.command(help='Randomly picks a snack item to eat')
 async def snack(ctx):
     await ctx.send(random_line('snackList.txt'))
          
