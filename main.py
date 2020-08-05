@@ -25,18 +25,17 @@ class MyClient(discord.Client):
             await message.channel.send('pong')
 
 @client.command()
-async def food(ctx)
-    #generates a "random" food item from list file
-    # the "lower()" changes received argument to lowercase, so that the command will be recognized regardless of case
+async def food(ctx):
     await ctx.send(random_line('foodList.txt'))
-            
+    #generates a "random" food item from list file
+
  
 @client.command()
-async def snack(ctx)
+async def snack(ctx):
     await ctx.send(random_line('snackList.txt'))
          
 @client.command()
-async def aicifood(ctx)         
+async def aicifood(ctx):      
     ctx.send(random_line('aicifood.txt'))
             
 #If there is an error, it will answer with an error
