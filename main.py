@@ -7,6 +7,7 @@ from randomPick import random_line
 
 client = commands.Bot(command_prefix = 'w ')
 
+@client.event
 async def on_message(self, message):
   ctx = await self.get_context(message)
   if ctx.prefix is not None:
