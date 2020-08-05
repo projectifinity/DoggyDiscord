@@ -15,15 +15,17 @@ class MyClient(discord.Client):
         print('Logged on as', self.user)
 
 
-#    async def on_message(self, message):
+    async def on_message(self, message):
     
         # we do not want the bot to reply to itself
-#        if message.author == self.user:
- #           return
+        if message.author == self.user:
+            return
 
-#        if message.content == 'ping':
-#            await message.channel.send('pong')
+        if message.content == 'ping':
+            await message.channel.send('pong')
 
+        await bot.process_commands(message)
+        
 @client.command(name='pring')
 async def pring(ctx):
     await ctx.send(f'Prong! {round (client.latency * 1000)}ms ')
