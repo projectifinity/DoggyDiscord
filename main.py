@@ -29,7 +29,7 @@ async def food(ctx):
 async def snack(ctx):
     await ctx.send(random_line('snackList.txt'))
          
-@client.command(name='aicifoodz', help='Picks something from Aici\'s food list')
+@client.command(name='aicifood', help='Picks something from Aici\'s food list')
 async def aicifood(ctx):      
     await ctx.send(random_line('aicifood.txt'))
             
