@@ -1,55 +1,68 @@
+# version 0.2
+# trying to align code with recommended form in documentation
+# capitalizing variables (ongoing) as it seems to be a python convention?
+
 import discord
 import os #no idea what this is, but it works
-#from keepAlive import keep_alive
+from discord.ext import commands
+from randomPick import random_line
 
-# commandPrefix = "w "
-# client = commands.Bot(command_prefix = 'w ', case_insentive=True)
+# CMD_PREFIX = "w "
+client = commands.Bot(command_prefix = 'w ', case_insentive=True)
 
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as', self.user)
 
 
-
     async def on_message(self, message):
     
-        # don't respond to ourselves
+        # we do not want the bot to reply to itself
         if message.author == self.user:
             return
 
         if message.content == 'ping':
             await message.channel.send('pong')
 
-        #generates a "random" food item from list file
-        # the "lower()" changes received argument to lowercase, so that the command will be recognized regardless of case
-        if message.content.lower() == 'w food':
-            from foodPick import random_line
-            await message.channel.send(random_line('foodList.txt'))
+@client.command()
+async def food(ctx)
+    #generates a "random" food item from list file
+    # the "lower()" changes received argument to lowercase, so that the command will be recognized regardless of case
+    await ctx.send(random_line('foodList.txt'))
             
-        if message.content.lower() == 'w snack':
-            from foodPick import random_line
-            await message.channel.send(random_line('snackList.txt'))
+ 
+@client.command()
+async def snack(ctx)
+    await ctx.send(random_line('snackList.txt'))
+         
+@client.command()
+async def aicifood(ctx)         
+    ctx.send(random_line('aicifood.txt'))
             
-        if message.content.lower() == 'w aicifood':
-            from foodPick import random_line
-            await message.channel.send(random_line('aicifood.txt'))
-            
-        # temporary solution    
-        #if 'dramad' in message.content.lower():
-        #    from mydramalistSearch import drama_search
-        #    await message.channel.send(drama_search())
-  
-  
-        # this thing doesn't work, no idea why
-        if message.content.startswith('pring'):
-            await message.channel.send('pong')
-            print ("oknn")
-
-
+#If there is an error, it will answer with an error
+@client.event
+async def on_command_error(ctx, error):
+    await ctx.send(f'Error. Try .help ({error})')
+    
+    
+    
 client = MyClient()
-#keep_alive()
-client.run(os.getenv("dtoken"))
-# no idea why "client.run('dtoken')" doesn't work but above line works
+
+client.run(os.getenv("DTOKEN"))
+# no idea why "client.run('DTOKEN')" doesn't work but above line works
+
+
+# temporary solution    
+#if 'dramad' in message.content.lower():
+#    from mydramalistSearch import drama_search
+#    await message.channel.send(drama_search())
+
+  
+#        # this thing doesn't work, no idea why
+#        if message.content.startswith('pring'):
+#            await message.channel.send('pong')
+#            print ("oknn")
 
 # example code
 # bot.command_prefix = nprefix
+# ctx means context
