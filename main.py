@@ -45,7 +45,7 @@ async def on_command_error(ctx, error):
     
     
     
-#client = MyClient()
+client = MyClient()
 
 client.run(os.getenv("DTOKEN"))
 # no idea why "client.run('DTOKEN')" doesn't work but above line works
