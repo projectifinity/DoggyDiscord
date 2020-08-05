@@ -2,3 +2,7 @@
 :haram: 
 :pig2:
 :pig:
+:wine_glass:
+:beer:
+:whisky:
+:champagne_glass:
