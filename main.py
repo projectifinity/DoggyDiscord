@@ -7,7 +7,6 @@ import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
 
-# CMD_PREFIX = "w "
 client = commands.Bot(command_prefix = 'w ')
 
 @client.event
@@ -22,19 +21,17 @@ async def pring(ctx):
     await ctx.send(f'Prong! {round (client.latency * 1000)}ms ')
 
 
-@client.command()
+@client.command(name='food', help='Randomly picks from a food list')
 async def food(ctx):
     await ctx.send(random_line('foodList.txt'))
-    #generates a "random" food item from list file
-
  
-@client.command()
+@client.command(name='snack', help='Randomly picks a snack item to eat')
 async def snack(ctx):
     await ctx.send(random_line('snackList.txt'))
          
-@client.command()
+@client.command(name='aicifoodz', help='Picks something from Aici\'s food list')
 async def aicifood(ctx):      
-    ctx.send(random_line('aicifood.txt'))
+    await ctx.send(random_line('aicifood.txt'))
             
 #If there is an error, it will answer with an error
 @client.event
@@ -46,6 +43,7 @@ async def on_command_error(ctx, error):
 client.run(os.getenv("DTOKEN"))
 # no idea why "client.run('DTOKEN')" doesn't work but above line works
 #client.run('DTOKEN')
+#    causes an "Improper token has been passed" error
 
 # temporary solution    
 #if 'dramad' in message.content.lower():
