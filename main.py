@@ -34,11 +34,15 @@ async def aicifood(ctx):
 @client.command()
 async def pytha(ctx):
     await ctx.send(random_line('pork.txt'))
+    
+@client.command()
+async def mousa(ctx):
+    await ctx.send(random_line('moose.txt'))
             
 #If there is an error, it will answer with an error
 @client.event
 async def on_command_error(ctx, error):
-    await ctx.send(f'Error. Try .help ({error})')
+    await ctx.send(f'Error. Try "w help" ({error})')
     
    
 
