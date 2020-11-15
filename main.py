@@ -40,9 +40,9 @@ async def mousa(ctx):
     await ctx.send(random_line('moose.txt'))
             
 #If there is an error, it will answer with an error
-@client.event
-async def on_command_error(ctx, error):
-    await ctx.send(f'Error. Try "w help" ({error})')
+#@client.event
+#async def on_command_error(ctx, error):
+#    await ctx.send(f'Error. Try "w help" ({error})')
     
    
 
