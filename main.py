@@ -38,6 +38,10 @@ async def pytha(ctx):
 @client.command()
 async def mousa(ctx):
     await ctx.send(random_line('moose.txt'))
+    
+@client.command(help='Picks a classic cocktail from Serious Eats')
+async def cocktail(ctx):
+    await ctx.send(random_line('classic-cocktails.txt'))
             
 #If there is an error, it will answer with an error
 #@client.event
