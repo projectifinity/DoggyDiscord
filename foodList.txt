@@ -32,3 +32,4 @@ schnitzel, pork katsu, chicken katsu
 fried eggs, omelet, omurice
 pasta: pesto pasta, spaghetti, lasagna
 halal snack pack
+pb&j, remix: pb&banana
