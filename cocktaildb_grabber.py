@@ -50,6 +50,30 @@ while (True):
         meaArr.append(mea)
         i += 1
 
+############ measure + ingredients
+
+# find length of ing array
+igLen = len(igArr)
+
+#match with measure, check to see if measure exists first
+meaLen = len(meaArr)
+
+# array with everything
+fullIg = []
+
+i = 0
+
+while (i < igLen):
+    #checks if measurement value exists
+    if (meaArr[i] == False):
+        fullIg.append(igArr[i] + "\n")
+        break
+    else:
+        fullIg.append(meaArr[i] + " " + igArr[i] + "\n" )
+
+    print (fullIg)
+    i += 1
+
 
 ########### directions
 
