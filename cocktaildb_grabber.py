@@ -88,7 +88,7 @@ while (i < igLen):
 """
 
 print (''.join(fullIg))
-pfull = (', '.join(fullIg))
+pfull = (''.join(fullIg))
 
 ########### directions
 
