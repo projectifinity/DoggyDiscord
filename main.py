@@ -5,7 +5,7 @@ import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
 from cocktaildb_grabber import * # note: probably bad practice
-# import json # for JSON interaction
+
 
 client = commands.Bot(command_prefix = '.')
 
@@ -47,11 +47,15 @@ async def cocktail(ctx):
 
 @client.command(help='Picks a random mixed beverage that is either alcoholic or non-alcoholic')
 async def drink(ctx):
-    d=discord.Embed(title=drinkName)
+    d=discord.Embed(
+        title=drinkName,
+        description = 'test',
+        color = discord.Color.blue()
+    )
     d.set_thumbnail(url=imgLink)
     d.add_field(name="**Ingredients:**", value="placeholder\ningredients", inline=False)
     d.add_field(name="**Directions**", value=direc, inline=False)
-    await ctx.send(d)
+    await ctx.send(embed=d)
 
 
 
