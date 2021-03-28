@@ -4,6 +4,7 @@ import discord
 import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
+from recipe_scrapers import scrape_me
 
 client = commands.Bot(command_prefix = '.')
 
@@ -42,7 +43,18 @@ async def mousa(ctx):
 @client.command(help='Picks a classic cocktail from Serious Eats')
 async def cocktail(ctx):
     await ctx.send(random_line('classic-cocktails.txt'))
-            
+
+@client.command(help='Picks a random mixed beverage')
+async def drink(ctx):
+    await ctx.send(random_line('beverages.txt'))
+
+
+
+
+
+
+
+           
 #If there is an error, it will answer with an error
 #@client.event
 #async def on_command_error(ctx, error):
