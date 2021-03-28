@@ -47,11 +47,11 @@ async def cocktail(ctx):
 
 @client.command(help='Picks a random mixed beverage that is either alcoholic or non-alcoholic')
 async def drink(ctx):
-    drink=discord.Embed(title=drinkName)
-    drink.set_thumbnail(url=imgLink)
-    drink.add_field(name="**Ingredients:**", value="placeholder\ningredients", inline=False)
-    drink.add_field(name="**Directions**", value=direc, inline=False)
-    await ctx.send(drink=drink)
+    d=discord.Embed(title=drinkName)
+    d.set_thumbnail(url=imgLink)
+    d.add_field(name="**Ingredients:**", value="placeholder\ningredients", inline=False)
+    d.add_field(name="**Directions**", value=direc, inline=False)
+    await ctx.send(d)
 
 
 
