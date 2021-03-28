@@ -70,10 +70,10 @@ while (i < igLen):
         break
     else:
         fullIg.append(meaArr[i] + " " + igArr[i] + "\n" )
-
-    print (fullIg)
     i += 1
 
+print (''.join(fullIg))
+pfull = (', '.join(fullIg))
 
 ########### directions
 
