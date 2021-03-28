@@ -4,6 +4,8 @@ import discord
 import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
+import cocktail_grabber
+# import json # for JSON interaction
 
 client = commands.Bot(command_prefix = '.')
 
@@ -40,13 +42,16 @@ async def mousa(ctx):
     await ctx.send(random_line('moose.txt'))
     
 @client.command(help='Picks a classic cocktail from Serious Eats')
-async def cocktail(ctx):
+async def cocktail se(ctx):
     await ctx.send(random_line('classic-cocktails.txt'))
 
-@client.command(help='Picks a random mixed beverage')
+@client.command(help='Picks a random mixed beverage that is either alcoholic or non-alcoholic')
 async def drink(ctx):
-    await ctx.send(random_line('beverages.txt'))
-
+    drink=discord.Embed(title=drinkName)
+    drink.set_thumbnail(url=imgLink)
+    drink.add_field(name="**Ingredients:**", value="placeholder\ningredients", inline=False)
+    drink.add_field(value=direc, inline=False)
+    await ctx.send(drink=drink)
 
 
 
