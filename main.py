@@ -53,7 +53,7 @@ async def drink(ctx):
         title=drinkName,
     )
     d.set_thumbnail(url=imgLink)
-    d.add_field(name="**Ingredients:**", value="placeholder\ningredients", inline=False)
+    d.add_field(name="**Ingredients:**", value=fullIg, inline=False)
     d.add_field(name="**Directions:**", value=direc, inline=False)
     await ctx.send(embed=d)
 
