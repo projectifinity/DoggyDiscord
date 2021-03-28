@@ -4,7 +4,6 @@ import discord
 import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
-from recipe_scrapers import scrape_me
 
 client = commands.Bot(command_prefix = '.')
 
