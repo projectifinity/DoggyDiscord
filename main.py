@@ -4,6 +4,7 @@ import discord
 import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
+from cocktaildb_grabber import * # note: probably bad practice
 
 
 
@@ -48,8 +49,6 @@ async def cocktail(ctx):
 @client.command(help='Picks a random mixed beverage that is either alcoholic or non-alcoholic')
 async def drink(ctx):
 
-    from cocktaildb_grabber import * # note: probably bad practice
-    
     d=discord.Embed(
         title=drinkName,
     )
