@@ -63,6 +63,8 @@ fullIg = []
 
 i = 0
 
+
+
 while (i < igLen):
     #checks if measurement value exists
     if (meaArr[i] == False):
@@ -71,6 +73,19 @@ while (i < igLen):
     else:
         fullIg.append(meaArr[i] + " " + igArr[i] + "\n" )
     i += 1
+"""
+while (i < igLen):
+    #checks if measurement value exists
+    if (meaArr[i] == False):
+        fullIg.append(igArr[i] + ", ")
+        break
+    if (i == ( len(igArr)- 1 ) ):
+        fullIg.append(meaArr[i] + " " + igArr[i]
+    else:
+        fullIg.append(meaArr[i] + " " + igArr[i] + ", " )
+    i += 1
+
+"""
 
 print (''.join(fullIg))
 pfull = (', '.join(fullIg))
