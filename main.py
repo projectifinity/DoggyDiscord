@@ -42,7 +42,7 @@ async def mousa(ctx):
     await ctx.send(random_line('moose.txt'))
     
 @client.command(help='Picks a classic cocktail from Serious Eats')
-async def cocktail se(ctx):
+async def cocktail(ctx):
     await ctx.send(random_line('classic-cocktails.txt'))
 
 @client.command(help='Picks a random mixed beverage that is either alcoholic or non-alcoholic')
