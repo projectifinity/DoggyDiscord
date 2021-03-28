@@ -50,7 +50,7 @@ async def drink(ctx):
     drink=discord.Embed(title=drinkName)
     drink.set_thumbnail(url=imgLink)
     drink.add_field(name="**Ingredients:**", value="placeholder\ningredients", inline=False)
-    drink.add_field(value=direc, inline=False)
+    drink.add_field(name="**Directions**", value=direc, inline=False)
     await ctx.send(drink=drink)
 
 
