@@ -4,7 +4,7 @@ import discord
 import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
-import cocktaildb_grabber
+from cocktaildb_grabber import * # note: probably bad practice
 # import json # for JSON interaction
 
 client = commands.Bot(command_prefix = '.')

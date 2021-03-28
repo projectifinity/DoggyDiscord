@@ -11,8 +11,6 @@ data = json.loads(res.text)
 ############ name of drink
 drinkName = data['drinks'][0]['strDrink']
 
-print (drinkName)
-
 
 ########### ingredients
 
@@ -35,9 +33,6 @@ while True:
         igArr.append(ing)
         i += 1
 
-print (igArr)
-
-
 ############ measure
 
 meaArr = []
@@ -55,18 +50,12 @@ while (True):
         meaArr.append(mea)
         i += 1
 
-print (meaArr)
-
 
 ########### directions
 
 direc = data['drinks'][0]['strInstructions']
 
-print (direc)
-
 
 ########### image url
 
 imgLink = data['drinks'][0]['strDrinkThumb']
-
-print (imgLink)
