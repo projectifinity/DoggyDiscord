@@ -49,12 +49,10 @@ async def cocktail(ctx):
 async def drink(ctx):
     d=discord.Embed(
         title=drinkName,
-        description = 'test',
-        color = discord.Color.blue()
     )
     d.set_thumbnail(url=imgLink)
     d.add_field(name="**Ingredients:**", value="placeholder\ningredients", inline=False)
-    d.add_field(name="**Directions**", value=direc, inline=False)
+    d.add_field(name="**Directions:**", value=direc, inline=False)
     await ctx.send(embed=d)
 
 
