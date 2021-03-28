@@ -1,12 +1,16 @@
 import requests, json
 
-#grab data
-res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+######## refreshes data
 
-#res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007')
+def refresh_data():
+    #grab data
+    res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
 
-# converts response data to dict (like an array)
-data = json.loads(res.text)
+    # converts response data to dict (like an array)
+    data = json.loads(res.text)
+    return data
+
+refresh_data()
 
 ############ name of drink
 drinkName = data['drinks'][0]['strDrink']
