@@ -7,10 +7,10 @@ def refresh_data():
     res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
 
     # converts response data to dict (like an array)
-    data = json.loads(res.text)
-    return data
+    info = json.loads(res.text)
+    return info
 
-refresh_data()
+data = refresh_data()
 
 ############ name of drink
 drinkName = data['drinks'][0]['strDrink']
