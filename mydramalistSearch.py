@@ -6,7 +6,7 @@ import requests, json
 def drama_link(dramaData):
 
     #print ('drama data in search:' + dramaData)
-    if ( bool(dramaData['results'][0]['slug']) == False ):
+    if ( bool(dramaData['results']) == False ):
         dramaLink = ('Drama could not be found.')
     else:
         mdlSlug = dramaData['results'][0]['slug']
