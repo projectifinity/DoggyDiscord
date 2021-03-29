@@ -6,6 +6,7 @@ from discord.ext import commands
 from randomPick import random_line
 import requests, json
 from cocktaildb_grabber import drink_info
+from mydramalistSearch import drama_link
 
 
 
@@ -66,7 +67,14 @@ async def drink(ctx):
     await ctx.send(embed=d)
 
 
+@client.command(help='Searches MyDramaList')
+async def drama(ctx, *args):
+    res = requests.get(urlVar)
+    dramaData = json.loads(res.text)
 
+    search = ' '.join(args)
+    
+    await ctx.send(drama_link(search))
 
 
 
