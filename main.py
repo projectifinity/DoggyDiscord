@@ -74,7 +74,6 @@ async def drama(ctx, *args):
 
     res = requests.get("https://kuryana.vercel.app/search/q/" + search)
     dramaData = json.loads(res.text)
-    print (dramaData)
    
     await ctx.send(drama_link(dramaData))
 
