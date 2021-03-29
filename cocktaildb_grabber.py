@@ -13,7 +13,7 @@ def refresh_data():
 data = refresh_data()
 """
 
-def drink_grab (argu):
+def drink_grab (data):
 
     ############ name of drink
     drinkName = data['drinks'][0]['strDrink']
