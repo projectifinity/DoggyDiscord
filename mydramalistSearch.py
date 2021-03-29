@@ -1,6 +1,8 @@
 #converts string to "search format"
 import requests, json
 
+
+
 def drama_link(search):
 
     urlVar = "https://kuryana.vercel.app/search/q/" + search
@@ -21,6 +23,9 @@ def drama_link(search):
 
     print (dramaLink)
     return dramaLink
+
+
+
 
 """
 

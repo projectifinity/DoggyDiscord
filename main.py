@@ -73,6 +73,7 @@ async def drama(ctx, *args):
     dramaData = json.loads(res.text)
 
     search = ' '.join(args)
+    print ('Search results: ' + search)
     
     await ctx.send(drama_link(search))
 
