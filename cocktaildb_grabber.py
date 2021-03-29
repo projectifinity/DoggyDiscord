@@ -81,8 +81,6 @@ def drink_info (data):
             fullIg.append(meaArr[i] + " " + igArr[i] + "\n" )
         i += 1
 
-    print (''.join(fullIg))
-    
     pfull = (''.join(fullIg))
 
     ########### directions
