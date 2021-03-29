@@ -13,7 +13,7 @@ def refresh_data():
 data = refresh_data()
 """
 
-def drink_grab (data):
+def drink_info (data):
 
     ############ name of drink
     drinkName = data['drinks'][0]['strDrink']
@@ -82,6 +82,7 @@ def drink_grab (data):
         i += 1
 
     print (''.join(fullIg))
+    
     pfull = (''.join(fullIg))
 
     ########### directions
@@ -92,4 +93,8 @@ def drink_grab (data):
     ########### image url
 
     imgLink = data['drinks'][0]['strDrinkThumb']
+
+
+    ########## returning gathered values as a tuple
+    return drinkName, direc, imgLink, pfull;
 

@@ -4,8 +4,7 @@ import discord
 import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
-from cocktaildb_grabber import * # note: probably bad practice
-
+from cocktaildb_grabber import drink_info
 
 
 client = commands.Bot(command_prefix = '.')
@@ -54,7 +53,7 @@ async def drink(ctx):
     # converts response data to dict (like an array)
     info = json.loads(res.text)
 
-    drink_grab(info)
+    drink_info(info)
 
     d=discord.Embed(
         title=drinkName,
