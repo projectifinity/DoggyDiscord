@@ -5,7 +5,7 @@ import requests, json
 
 def drama_link(dramaData):
 
-    print ('drama data in search:' + dramaData)
+    #print ('drama data in search:' + dramaData)
     if ( (dramaData['results'][0]['slug']) == False ):
         dramaLink = ('Drama could not be found.')
     else:
