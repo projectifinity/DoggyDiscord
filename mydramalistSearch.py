@@ -5,15 +5,6 @@ import requests, json
 
 def drama_link(search):
 
-    urlVar = "https://kuryana.vercel.app/search/q/" + search
-
-    print (urlVar)
-
-    res = requests.get(urlVar)
-    dramaData = json.loads(res.text)
-
-    print (dramaData)
-
     if ( (dramaData['results'][0]['slug']) == False ):
         dramaLink = ('Drama could not be found.')
     else:

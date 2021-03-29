@@ -69,13 +69,13 @@ async def drink(ctx):
 
 @client.command(help='Searches MyDramaList')
 async def drama(ctx, *args):
-    res = requests.get(urlVar)
+    res = requests.get("https://kuryana.vercel.app/search/q/" + search)
     dramaData = json.loads(res.text)
 
     search = ' '.join(args)
     print ('Search results: ' + search)
     
-    await ctx.send(drama_link(search))
+    await ctx.send(drama_link(dramaData))
 
 
 
