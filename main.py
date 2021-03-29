@@ -48,6 +48,13 @@ async def cocktail(ctx):
 
 @client.command(help='Picks a random mixed beverage that is either alcoholic or non-alcoholic')
 async def drink(ctx):
+    #grab data
+    res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+
+    # converts response data to dict (like an array)
+    info = json.loads(res.text)
+
+    drink_grab(info)
 
     d=discord.Embed(
         title=drinkName,
