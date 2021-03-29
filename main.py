@@ -53,7 +53,7 @@ async def drink(ctx):
     # converts response data to dict (like an array)
     info = json.loads(res.text)
 
-    drink_info(info)
+    drinkName, direc, imgLink, pfull = drink_info(info)
 
     d=discord.Embed(
         title=drinkName,
