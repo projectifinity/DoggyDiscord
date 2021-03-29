@@ -49,7 +49,7 @@ async def cocktail(ctx):
     await ctx.send(random_line('classic-cocktails.txt'))
 
 @client.command(help='Picks a random mixed beverage that is either alcoholic or non-alcoholic')
-async def drink(ctx):
+async def drink(ctx, *, arg):
     #grab data
     res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
 
