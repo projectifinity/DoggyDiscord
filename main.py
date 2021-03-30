@@ -49,14 +49,26 @@ async def cocktail(ctx):
     await ctx.send(random_line('classic-cocktails.txt'))
 
 @client.command(help='Picks a random mixed beverage that is either alcoholic or non-alcoholic')
-async def drink(ctx, *, arg):
-    #grab data
-    res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+async def drink(ctx, *args):
 
-    # converts response data to dict (like an array)
-    info = json.loads(res.text)
+    #checks if tuple, args, is empty
+    if (len(args) == False):
 
-    drinkName, direc, imgLink, pfull = drink_info(info)
+        # calls for random drink
+        drinkName, direc, imgLink, pfull = drink_info(info)
+    
+    # tuple has arguments    
+    else:
+        ingredientFilter = ' '.join(args)
+        drinkID = drink_filter_returns_rdm_id(ingredientFilter)
+        info = drink_by_id(drinkID) 
+
+        print (info)
+
+        drinkName, direc, imgLink, pfull = drink_info(info)
+
+        print (drinkName, direc, imgLink, pfull)
+
 
     d=discord.Embed(
         title=drinkName,

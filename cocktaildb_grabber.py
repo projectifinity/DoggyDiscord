@@ -1,4 +1,5 @@
 import requests, json
+import random
 
 ######## refreshes data
 """
@@ -95,4 +96,41 @@ def drink_info (data):
 
     ########## returning gathered values as a tuple
     return drinkName, direc, imgLink, pfull;
+
+
+###############################
+
+drinkFilter = 'gin'
+
+
+# given an ingredient input, it returns random drink ID number
+def drink_filter_returns_rdm_id(drinkFilter):
+    #grab data
+    res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + drinkFilter)
+
+    # converts response data to dict (like an array)
+    data = json.loads(res.text)
+
+    indexOfDrinks = len(data['drinks'])
+    ranDrinkIndexNum = random.randint(0,indexOfDrinks)
+
+    return data['drinks'][0]['idDrink']
+
+    ####### to do ######
+    # handle for when page is empty 
+
+# returns drink information when given a drink ID number
+def drink_by_id(drinkID):
+
+    drinkIDstr = str(drinkID)
+    print (drinkID)
+
+    #grab data
+    res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drinkIDstr)
+
+
+    print (json.loads(res.text))
+    # converts response data to dict (like an array)
+    return json.loads(res.text)
+
 
