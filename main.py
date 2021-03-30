@@ -5,7 +5,7 @@ import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
 import requests, json
-from cocktaildb_grabber import drink_info, drink_filter_returns_rdm_id, drink_by_id
+from cocktaildb_grabber import drink_info, ingredient_filtered_data_returns_rdm_id, drink_by_id
 from mydramalistSearch import drama_link
 
 
@@ -66,7 +66,14 @@ async def drink(ctx, *args):
     # tuple has arguments    
     else:
         ingredientFilter = ' '.join(args)
-        drinkID = drink_filter_returns_rdm_id(ingredientFilter)
+
+        #grab data
+        res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + ingredientFilter)
+
+        # converts response data to dict (like an array)
+        info = json.loads(res.text)
+
+        drinkID = ingredient_filtered_data_returns_rdm_id(info)
         info = drink_by_id(drinkID) 
 
         print (info)

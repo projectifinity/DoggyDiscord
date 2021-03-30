@@ -100,16 +100,11 @@ def drink_info (data):
 
 ###############################
 
-drinkFilter = 'gin'
+#drinkFilter = 'gin'
 
 
-# given an ingredient input, it returns random drink ID number
-def drink_filter_returns_rdm_id(drinkFilter):
-    #grab data
-    res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + drinkFilter)
-
-    # converts response data to dict (like an array)
-    data = json.loads(res.text)
+# given a list(dict) filtered by ingredient, it returns random drink ID number
+def ingredient_filtered_data_returns_rdm_id(data):
 
     indexOfDrinks = len(data['drinks'])
     ranDrinkIndexNum = random.randint(0,indexOfDrinks)
