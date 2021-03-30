@@ -100,8 +100,16 @@ def drink_info (data):
 
 ###############################
 
-#drinkFilter = 'gin'
+##### debug stuff 
+"""
+ingredientFilter = 'gin'
 
+#grab data
+res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + ingredientFilter)
+
+# converts response data to dict (like an array)
+info = json.loads(res.text)
+"""
 
 # given a list(dict) filtered by ingredient, it returns random drink ID number
 def ingredient_filtered_data_returns_rdm_id(data):
@@ -109,7 +117,8 @@ def ingredient_filtered_data_returns_rdm_id(data):
     indexOfDrinks = len(data['drinks'])
     ranDrinkIndexNum = random.randint(0,indexOfDrinks)
 
-    return data['drinks'][0]['idDrink']
+    print ("random drink index is " + str(ranDrinkIndexNum))
+    return data['drinks'][ranDrinkIndexNum]['idDrink']
 
     ####### to do ######
     # handle for when page is empty 
@@ -128,4 +137,16 @@ def drink_by_id(drinkID):
     # converts response data to dict (like an array)
     return json.loads(res.text)
 
+"""
+######## debug stuff
 
+drinkID = ingredient_filtered_data_returns_rdm_id(info)
+info = drink_by_id(drinkID) 
+
+print (info)
+
+drinkName, direc, imgLink, pfull = drink_info(info)
+
+print (drinkName, direc, imgLink, pfull)
+
+"""
