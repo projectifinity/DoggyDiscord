@@ -5,7 +5,7 @@ import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
 import requests, json
-from cocktaildb_grabber import drink_info
+from cocktaildb_grabber import drink_info, drink_filter_returns_rdm_id, drink_by_id
 from mydramalistSearch import drama_link
 
 
