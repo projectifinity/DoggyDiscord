@@ -54,7 +54,13 @@ async def drink(ctx, *args):
     #checks if tuple, args, is empty
     if (len(args) == False):
 
-        # calls for random drink
+        #grab data
+        res = requests.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+
+        # converts response data to dict (like an array)
+        info = json.loads(res.text)
+
+        # gets information on random drink
         drinkName, direc, imgLink, pfull = drink_info(info)
     
     # tuple has arguments    
