@@ -1,6 +1,7 @@
 # version 0.2
 
 import discord
+import random
 import os #no idea what this is, but it works
 from discord.ext import commands
 from randomPick import random_line
@@ -101,6 +102,37 @@ async def drama(ctx, *args):
     dramaData = json.loads(res.text)
    
     await ctx.send(drama_link(dramaData))
+
+
+# some commands for fun
+# rps = rock paper scissors
+rpsTools = ['rock', 'paper', 'scissors']  # list of rps tools
+
+# rps rules
+# value beats key
+rpsRules = {'rock':'paper',
+            'paper':'scissors',
+            'scissors':'rock'}
+
+
+@client.command(aliases = ['rps'])
+async def _rps(ctx, tool = "none"):
+    emoji = {'rock': ':bricks:',
+             'paper': ':newspaper:',
+             'scissors': ':scissors:'}
+    if tool in rpsTools:
+        botTool = random.choice(rpsTools)
+
+        await ctx.send(f' {ctx.message.author.display_name} {emoji[tool]} :vs: {emoji[botTool]} bot ')
+
+        if botTool == rpsRules[tool]:
+            await ctx.send('**I win!**')
+        elif botTool == tool:
+            await ctx.send('Its a tie...')
+        else:
+            await ctx.send('You win.')
+    else:
+        await ctx.send(f'This is not a tool in "rock paper scissors". \n You can only use: \n {rpsTools[0]} {emoji[rpsTools[0]]} \n {rpsTools[1]} {emoji[rpsTools[1]]} \n {rpsTools[2]} {emoji[rpsTools[2]]}')
 
 
 
